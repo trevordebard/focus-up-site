@@ -48,19 +48,12 @@ const AboutItem = styled.div`
     img {
         height: 500px;
     }
-    :first-of-type {
-        margin-top: 15rem;
-    }
-    :last-of-type {
-        margin-bottom: 5rem;
-    }
-    :not(:first-of-type) {
-        margin-top: 5rem;
-    }
+
     p {
         margin-top: -25px;
         color: ${colors.light_grey};
         font-style: italic;
+        margin-bottom: 5rem;
     }
 `;
 
@@ -77,7 +70,7 @@ function About(props) {
             </LeftContainer>
             <RightContainer>
                 <Fade bottom>
-                    <AboutItem>
+                    <AboutItem style={{marginTop: '15rem'}}>
                         <img src="images/blocked_sites.png" alt="blocked_sites"/>
                         <p>Add the websites that you want to block.</p>
                     </AboutItem>

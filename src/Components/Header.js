@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components';
 import colors from '../constants/colors'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const HeaderContainer = styled.div`
     display: flex;
@@ -24,7 +26,7 @@ const MainInfo = styled.div`
     max-width: 250px;
     text-align: center;
 `;
-const Image = styled.img`
+const ImageContainer = styled.div`
     max-width: 60%;
     height: auto;
 `;
@@ -56,7 +58,12 @@ const Tagline = styled.p`
 function Header(props) {
     return (
         <HeaderContainer>
-            <Image src="promo.png" alt="app-screenshot"></Image>
+            <ImageContainer>
+                <LazyLoadImage
+                    src="promo_1.png"
+                    effect="blur"
+                />
+            </ImageContainer>
             <MainInfo>
                 <h1 style={{ color: "hsl(184,77%,34%)", fontWeight: "600" }}>Focus Up</h1>
                 <p style={{ color: "hsl(209, 28%, 39%)" }}>Set a timer. Block distracting sites.</p>
