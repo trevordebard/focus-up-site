@@ -23,9 +23,13 @@ const MainInfo = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.5rem;
-    max-width: 250px;
     text-align: center;
+    h1 {
+        font-size: 30px;
+    }
+    p {
+        font-size: 1.7rem;
+    }
 `;
 const ImageContainer = styled.div`
     max-width: 60%;
@@ -42,9 +46,9 @@ const DefaultButton = styled.button`
     border-radius: 3px;
     padding: 0.6em 1em;
     display: inline-block;
-    font-size: 1em;
     margin: 5px;
-
+    width: 120px;
+    font-size: 16px;
     cursor: pointer;
     box-shadow: inset 0 0 0 0 ${colors.secondary};
     transition: ease-out 0.3s;

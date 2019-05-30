@@ -70,7 +70,7 @@ function About(props) {
             </LeftContainer>
             <RightContainer>
                 <Fade bottom>
-                    <AboutItem style={{marginTop: '15rem'}}>
+                    <AboutItem style={{marginTop: '10rem'}}>
                         <img src="images/blocked_sites.png" alt="blocked_sites"/>
                         <p>Add the websites that you want to block.</p>
                     </AboutItem>
