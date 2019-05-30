@@ -42,6 +42,7 @@ const ImagePlaceholder = styled.div`
 
 const DefaultButton = styled.button`
     color: ${colors.secondary};
+    background-color: white;
     border: 2px solid ${colors.secondary};
     border-radius: 3px;
     padding: 0.6em 1em;
