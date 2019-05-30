@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import colors from '../constants/colors'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { ScrollTo } from "react-scroll-to";
 
 const HeaderContainer = styled.div`
     display: flex;
@@ -59,7 +60,7 @@ const Tagline = styled.p`
     align-self: flex-end;
     margin-bottom: 25px;
 `;
-function Header(props) {
+function Header({about}) {
     return (
         <HeaderContainer>
             <ImageContainer>    
@@ -69,12 +70,19 @@ function Header(props) {
                     alt="app-screenshot"
                 />
             </ImageContainer>
-            <MainInfo>
+            <MainInfo >
                 <h1 style={{ color: "hsl(184,77%,34%)", fontWeight: "600" }}>Focus Up</h1>
                 <p style={{ color: "hsl(209, 28%, 39%)" }}>Set a timer. Block distracting sites.</p>
                 <span>
                     <DefaultButton type="button">Download</DefaultButton>
-                    <DefaultButton type="button">Learn More</DefaultButton>
+                    <ScrollTo>
+                        {({ scrollTo }) => {
+                            return(
+                                <DefaultButton onClick={() => scrollTo({ y: window.scrollY + window.innerHeight, smooth: true })} type="button">Learn More</DefaultButton>
+                            )
+                        }
+                        }
+                    </ScrollTo>
                 </span>
             </MainInfo>
             <Tagline>Block the websites that distract you for as long as you want so that you can stay focused</Tagline>
