@@ -30,6 +30,10 @@ const ImageContainer = styled.div`
     max-width: 60%;
     height: auto;
 `;
+const ImagePlaceholder = styled.div`
+    width: 835px;
+    height: 400px;
+`
 
 const DefaultButton = styled.button`
     color: ${colors.secondary};
@@ -58,7 +62,7 @@ const Tagline = styled.p`
 function Header(props) {
     return (
         <HeaderContainer>
-            <ImageContainer>
+            <ImageContainer>    
                 <LazyLoadImage
                     src="promo.png"
                     effect="blur"
