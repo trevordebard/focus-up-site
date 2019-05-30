@@ -60,8 +60,9 @@ function Header(props) {
         <HeaderContainer>
             <ImageContainer>
                 <LazyLoadImage
-                    src="promo_1.png"
+                    src="promo.png"
                     effect="blur"
+                    alt="app-screenshot"
                 />
             </ImageContainer>
             <MainInfo>
