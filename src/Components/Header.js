@@ -74,7 +74,7 @@ function Header({about}) {
                 <h1 style={{ color: "hsl(184,77%,34%)", fontWeight: "600" }}>Focus Up</h1>
                 <p style={{ color: "hsl(209, 28%, 39%)" }}>Set a timer. Block distracting sites.</p>
                 <span>
-                    <DefaultButton type="button">Download</DefaultButton>
+                    <a href="Focus-Up-0.1.0.zip" download><DefaultButton type="button">Download</DefaultButton></a>
                     <ScrollTo>
                         {({ scrollTo }) => {
                             return(
