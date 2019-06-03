@@ -5,6 +5,7 @@ import colors from '../constants/colors'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { ScrollTo } from "react-scroll-to";
+import ProgressiveImage from 'react-progressive-image';
 
 const HeaderContainer = styled.div`
     display: flex;
@@ -34,6 +35,7 @@ const MainInfo = styled.div`
 const ImageContainer = styled.div`
     max-width: 60%;
     height: auto;
+    width: 100%;
 `;
 const ImagePlaceholder = styled.div`
     width: 835px;
