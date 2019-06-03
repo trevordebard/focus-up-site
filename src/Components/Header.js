@@ -72,9 +72,7 @@ const Tagline = styled.p`
     color: ${colors.secondary};
     margin-bottom: 10px;
     @media (max-width: 480px) {
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 0px;
+        margin: 50px 20px;
     }
 `;
 function Header({about}) {
