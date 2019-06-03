@@ -5,13 +5,13 @@ import colors from '../constants/colors'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { ScrollTo } from "react-scroll-to";
-import ProgressiveImage from 'react-progressive-image';
 
 const HeaderContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: 100vh;
     background-image:
     linear-gradient(
@@ -19,6 +19,11 @@ const HeaderContainer = styled.div`
       #e9e9e9, hsl(210, 36%, 97%)
     );
     height: 100vh;
+    @media (max-width: 480px) {
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+    }
+
 `;
 const MainInfo = styled.div`
     display: flex;
@@ -35,12 +40,13 @@ const MainInfo = styled.div`
 const ImageContainer = styled.div`
     max-width: 60%;
     height: auto;
-    width: 100%;
+    img {
+        max-height: 550px;
+    }
+    @media (max-width: 480px) {
+        max-width: 100%;
+    }
 `;
-const ImagePlaceholder = styled.div`
-    width: 835px;
-    height: 400px;
-`
 
 const DefaultButton = styled.button`
     color: ${colors.secondary};
@@ -64,15 +70,19 @@ const DefaultButton = styled.button`
 const Tagline = styled.p`
     font-size: 1.6rem;
     color: ${colors.secondary};
-    align-self: flex-end;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    @media (max-width: 480px) {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 0px;
+    }
 `;
 function Header({about}) {
     return (
         <HeaderContainer>
             <ImageContainer>    
                 <LazyLoadImage
-                    src="promo.png"
+                    src="layered_promo.png"
                     effect="blur"
                     alt="app-screenshot"
                 />

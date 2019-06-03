@@ -17,6 +17,11 @@ const AboutContainer = styled.div`
     height: 100vh;
     font-size: 1.8rem;
     color: ${colors.secondary};
+
+    @media (max-width: 480px) {
+        display: block;
+    }
+
 `;
 const LeftContainer = styled.div`
     grid-column-start: 1;
@@ -24,13 +29,17 @@ const LeftContainer = styled.div`
     display: flex;
     justify-content: center;
     ul {
-        position: sticky;
-        height: fit-content;
-        top: 20rem;
-        margin-top: 20rem;
+        margin: 10rem auto;
     }
-    li {
-        margin-top: 20px;
+    @media (min-width: 480px) {
+        ul {
+            position: sticky;
+            height: fit-content;
+            top: 20rem;
+        }
+        li {
+            margin-top: 20px;
+        }
     }
 `;
 const RightContainer = styled.div`
@@ -46,7 +55,7 @@ const AboutItem = styled.div`
     display: block;
     text-align: center;
     img {
-        height: 500px;
+        max-height: 500px;
     }
 
     p {
