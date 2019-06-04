@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components';
 import colors from '../constants/colors'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -103,10 +102,6 @@ function Header({about}) {
             <Tagline>Block the websites that distract you for as long as you want so that you can stay focused</Tagline>
         </HeaderContainer>
     )
-}
-
-Header.propTypes = {
-
 }
 
 export default Header

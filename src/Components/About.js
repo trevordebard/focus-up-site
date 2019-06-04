@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components';
 import colors from '../constants/colors'
 import Fade from 'react-reveal/Fade';
@@ -99,10 +98,6 @@ function About(props) {
             </RightContainer>
         </AboutContainer>
     )
-}
-
-About.propTypes = {
-
 }
 
 export default About

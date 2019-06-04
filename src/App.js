@@ -1,20 +1,23 @@
-import React, {useRef} from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import styled from 'styled-components';
 import Header from './Components/Header'
 import About from './Components/About';
-const Layout = styled.div`
-  
-`;
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Privacy from './Components/Privacy';
+
 
 function App() {
   return (
-    <Layout>
-        <Header/>
-        <About/>
-    </Layout>
+    <Router>
+      <Route path="/" exact component={Home} />
+      <Route path="/privacy" component={Privacy} />
+    </Router>
   );
-}
-
+}        
+const Home = () => (
+  <div>
+    <Header/>
+    <About/>
+  </div>
+)
 export default App;
