@@ -4,6 +4,7 @@ import Header from './Components/Header'
 import About from './Components/About';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Privacy from './Components/Privacy';
+import Faq from './Components/Faq';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <Router>
       <Route path="/" exact component={Home} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/faq" component={Faq} />
     </Router>
   );
 }        
