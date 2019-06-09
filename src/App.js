@@ -1,11 +1,16 @@
-import React from 'react';
-import './App.css';
-import Header from './Components/Header'
-import About from './Components/About';
+import React from "react";
+import "./App.css";
+import Header from "./Components/Header";
+import About from "./Components/About";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Privacy from './Components/Privacy';
-import Faq from './Components/Faq';
+import Privacy from "./Components/Privacy";
+import Faq from "./Components/Faq";
+import ReactGA from "react-ga";
 
+ReactGA.initialize("UA-141688771-1");
+ReactGA.pageview("/");
+ReactGA.pageview("/privacy");
+ReactGA.pageview("/about");
 
 function App() {
   return (
@@ -15,11 +20,11 @@ function App() {
       <Route path="/faq" component={Faq} />
     </Router>
   );
-}        
+}
 const Home = () => (
   <div>
-    <Header/>
-    <About/>
+    <Header />
+    <About />
   </div>
-)
+);
 export default App;
