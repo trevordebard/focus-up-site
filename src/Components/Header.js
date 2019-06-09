@@ -4,7 +4,8 @@ import colors from "../constants/colors";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { ScrollTo } from "react-scroll-to";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faApple } from "@fortawesome/fontawesome-free-brands";
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -47,7 +48,7 @@ const DefaultButton = styled.button`
   background-color: white;
   border: 2px solid ${colors.secondary};
   border-radius: 3px;
-  padding: 0.6em 1em;
+  padding: 0.6em 0.5em;
   display: inline-block;
   margin: 5px;
   width: 120px;
@@ -87,7 +88,10 @@ function Header({ about }) {
         </p>
         <span>
           <a href="Focus Up-0.1.1-mac.zip" download>
-            <DefaultButton type="button">Download</DefaultButton>
+            <DefaultButton type="button">
+              {" "}
+              <FontAwesomeIcon icon={faApple} /> Download
+            </DefaultButton>
           </a>
           <ScrollTo>
             {({ scrollTo }) => {
