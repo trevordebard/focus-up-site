@@ -6,6 +6,8 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { ScrollTo } from "react-scroll-to";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple } from "@fortawesome/fontawesome-free-brands";
+import ReactGA from "react-ga";
+
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -87,7 +89,16 @@ function Header({ about }) {
           Set a timer. Block distracting sites.
         </p>
         <span>
-          <a href="Focus Up-0.1.1-mac.zip" download>
+          <a
+            href="Focus Up-0.1.1-mac.zip"
+            download
+            onClick={() => {
+              ReactGA.event({
+                category: "User",
+                action: "Download"
+              });
+            }}
+          >
             <DefaultButton type="button">
               {" "}
               <FontAwesomeIcon icon={faApple} /> Download
@@ -97,12 +108,16 @@ function Header({ about }) {
             {({ scrollTo }) => {
               return (
                 <DefaultButton
-                  onClick={() =>
+                  onClick={() => {
                     scrollTo({
                       y: window.scrollY + window.innerHeight,
                       smooth: true
-                    })
-                  }
+                    });
+                    ReactGA.event({
+                      category: "User",
+                      action: "Learn More"
+                    });
+                  }}
                   type="button"
                 >
                   Learn More
