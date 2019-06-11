@@ -78,7 +78,7 @@ function Header({ about }) {
   if (os === "Mac") {
     downloadLink = "Focus Up-0.1.1-mac.zip";
   } else {
-    downloadLink = "Focus Up Setup 0.1.1.exe";
+    downloadLink = "Focus Up Setup.exe";
   }
   return (
     <HeaderContainer>
