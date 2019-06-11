@@ -76,11 +76,9 @@ function Header({ about }) {
   let os = getOS();
   let downloadLink;
   if (os === "Mac") {
-    downloadLink =
-      "https://onedrive.live.com/download?cid=6729BA2984B8D039&resid=6729BA2984B8D039%21326&authkey=AFNMWxmYqepygJY";
+    downloadLink = "Focus Up-0.1.1-mac.zip";
   } else {
-    downloadLink =
-      "https://onedrive.live.com/download?cid=6729BA2984B8D039&resid=6729BA2984B8D039%21327&authkey=ABHbMhTe6AesTa";
+    downloadLink = "Focus Up Setup 0.1.1.exe";
   }
   return (
     <HeaderContainer>
