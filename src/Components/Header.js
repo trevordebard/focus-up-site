@@ -5,8 +5,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { ScrollTo } from "react-scroll-to";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faApple } from "@fortawesome/fontawesome-free-brands";
+import { faApple, faWindows } from "@fortawesome/fontawesome-free-brands";
 import ReactGA from "react-ga";
+import getOS from "../utils/getOS";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -72,6 +73,13 @@ const Tagline = styled.p`
   }
 `;
 function Header({ about }) {
+  let os = getOS();
+  let downloadLink;
+  if (os === "Mac") {
+    downloadLink = "Focus Up-0.1.1-mac.zip";
+  } else {
+    downloadLink = "Focus Up Setup 0.1.1.exe";
+  }
   return (
     <HeaderContainer>
       <ImageContainer>
@@ -90,7 +98,7 @@ function Header({ about }) {
         </p>
         <span>
           <a
-            href="Focus Up-0.1.1-mac.zip"
+            href={downloadLink}
             download
             onClick={() => {
               ReactGA.event({
@@ -101,7 +109,8 @@ function Header({ about }) {
           >
             <DefaultButton type="button">
               {" "}
-              <FontAwesomeIcon icon={faApple} /> Download
+              <FontAwesomeIcon icon={os === "Mac" ? faApple : faWindows} />{" "}
+              Download
             </DefaultButton>
           </a>
           <ScrollTo>
